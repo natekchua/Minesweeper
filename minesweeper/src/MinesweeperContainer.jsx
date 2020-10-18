@@ -98,10 +98,10 @@ export default class MinesweeperContainer extends React.Component {
           </select>
         </div>
         <Minesweeper
-          updateFlagCount={this.updateFlagCount}
           difficulty={this.state.difficulty}
           startTimer={this.startTimer}
           stopTimer={this.stopTimer}
+          updateFlagCount={this.updateFlagCount}
           rows={this.nRows}
           cols={this.nCols}
           mines={nMines}
