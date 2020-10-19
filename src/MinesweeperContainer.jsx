@@ -103,13 +103,13 @@ export default class MinesweeperContainer extends React.Component {
           startTimer={this.startTimer}
           stopTimer={this.stopTimer}
           updateFlagCount={this.updateFlagCount}
+          generate2DArray={this.array2d}
           difficulty={this.state.difficulty}
           elapsedTime={elapsedTime}
           rows={this.nRows}
           cols={this.nCols}
           mines={nMines}
           arr={arr}
-          generate2DArray={this.array2d}
         />
       </div>
     );
