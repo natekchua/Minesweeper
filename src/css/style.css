@@ -102,7 +102,7 @@ option {
 
 #grid {
   width: 100%;
-  max-width: 800px;
+  /* max-width: 800px; */
   margin: 0 auto;
   display: grid;
 }
@@ -210,46 +210,29 @@ p.glow {
 
 /* Responsive Media Queries */
 
-/* Extra Small Devices (Older Phones) */
-@media only screen and (max-width: 480px) {
+/* Larger Devices (Desktops, Laptops) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
   * {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 
   h1 {
-    font-size: 1.37rem;
+    font-size: 1.9rem;
   }
-
-  select {
-    width: 40%;
-    font-size: 14px;
-  }
-
+  
   .container {
-    max-width: 480px;
+    max-width: 1024px;
   }
 
   #game-header {
-    padding: 6px 12px;
-    margin: 10px;
-  }
-
-  #overlayin {
-    padding: 0.9em 1.1em;
-    box-shadow: 0 0 10px black;
-  }
-  
-  #overlayin p {
-    font-size: 0.92em;
-  }
-  
-  p.big {
-    font-size: 1.25em !important;
+    width: 70%;
+    padding: 10px 18px;
+    margin: 15px;
   }
 }
 
 /* Small Devices (Phones, Tablets) */
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 481px) and (max-width: 768px) {
   * {
     font-size: 1.275rem;
   }
@@ -281,6 +264,75 @@ p.glow {
   }
 }
 
+/* Extra Small Devices (Older Phones) */
+@media only screen and (max-width: 480px) {
+  * {
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 1.27rem;
+  }
+
+  select {
+    width: 40%;
+    font-size: 14px;
+  }
+
+  .container {
+    max-width: 480px;
+  }
+
+  #game-header {
+    padding: 6px 12px;
+    margin: 10px;
+  }
+
+  #overlayin {
+    padding: 0.9em 1.1em;
+    box-shadow: 0 0 10px black;
+  }
+  
+  #overlayin p {
+    font-size: 0.92em;
+  }
+  
+  p.big {
+    font-size: 1.25em !important;
+  }
+}
+
+/* Larger Phones and Tablets (Landscape) */
+@media only screen and (min-device-width: 769px) and (max-device-width: 1023px) and (orientation: landscape) {
+  * {
+    font-size: 1rem;
+  }
+
+  body {
+    overflow-y: scroll;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  #grid {
+    height: 75%;
+    width: 44%;
+    max-width: 800px;
+  }
+  
+  #game-header {
+    width: 44%;
+    padding: 2px 10px;
+    margin: 10px;
+  }
+  
+  p.big {
+    font-size: 1.6em !important;
+  }
+}
+
 /* XS / Smaller Phones (Landscape) */
 @media only screen and (min-device-width: 480px) and (max-device-width: 768px) and (orientation: landscape) {
   * {
@@ -307,61 +359,7 @@ p.glow {
   }
 }
 
-/* Larger Devices (Desktops, Laptops) */
-@media only screen and (max-width: 1024px) {
-  * {
-    font-size: 1.3rem;
-  }
-
-  h1 {
-    font-size: 1.9rem;
-  }
-
-  .container {
-    max-width: 1024px;
-  }
-
-  #grid {
-    height: 75%;
-    width: 70%;
-  }
-
-  #game-header {
-    width: 70%;
-    padding: 10px 18px;
-    margin: 15px;
-  }
-}
-
-/* Larger Phones and Tablets (Landscape) */
-@media only screen and (min-device-width: 769px) and (max-device-width: 1023px) and (orientation: landscape) {
-  * {
-    font-size: 1rem;
-  }
-
-  body {
-    overflow-y: scroll;
-  }
-
-  h1 {
-    font-size: 1.2rem;
-  }
-
-  #grid {
-    height: 75%;
-    width: 44%;
-  }
-  
-  #game-header {
-    width: 44%;
-    padding: 2px 10px;
-    margin: 10px;
-  }
-  
-  p.big {
-    font-size: 1.6em !important;
-  }
-}
+/* Edge Case Devices */
 
 /* Handle Galaxy Fold Device (Landscape) */
 @media only screen and (width: 653px) and (height: 280px) and (orientation: landscape) {
@@ -395,5 +393,14 @@ p.glow {
     width: 31%;
     padding: 6px 12px;
     margin: 10px;
+  }
+}
+
+/* Default iPad Device (Landscape) */
+@media only screen and (width: 1024px) and (orientation: landscape) {
+  #grid {
+    height: 70%;
+    width: 70%;
+    max-width: 800px;
   }
 }
