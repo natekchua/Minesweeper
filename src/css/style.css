@@ -52,16 +52,7 @@ option {
   margin: 0 auto;
   max-width: 800px;
   height: 100vh;
-  animation: fade-in 1.18s;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  animation: fadeIn 1.18s;
 }
 
 .bomb {
@@ -113,7 +104,7 @@ option {
   display: grid;
 }
 
-/*  */
+/* Overlay Styling from Pavol's Lights Out Game  */
 
 #overlay {
   position: fixed;
@@ -126,9 +117,8 @@ option {
   opacity: 1;
   animation: 0s;
   transition: all 0s;
-
   visibility: hidden;
-  animation: fadeOut 0.5s;
+  animation: fadeOut 0.4s;
   animation-fill-mode: forwards;
 }
 #overlay * {
@@ -137,7 +127,7 @@ option {
 
 #overlay.active {
   visibility: visible;
-  animation: fadeIn 0.5s;
+  animation: fadeIn 0.4s;
   animation-fill-mode: forwards;
 }
 
@@ -166,7 +156,7 @@ p.darker {
 }
 
 p.glow {
-  animation: glow 1s infinite alternate-reverse;
+  animation: glow 0.85s infinite alternate-reverse;
 }
 
 @keyframes glow {
@@ -180,7 +170,7 @@ p.glow {
 
 #overlay.active #overlayin {
   opacity: 0;
-  animation: spinIn 1s ease-in-out;
+  animation: spinIn 0.75s ease-in-out;
   animation-fill-mode: forwards;
 }
 
