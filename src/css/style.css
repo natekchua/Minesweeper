@@ -22,9 +22,8 @@ body {
 
 select {
   background: #fc43d4;
-  border: 10px solid;
+  border: 6px solid;
   border-image-slice: 1;
-  border-width: 5px;
   border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
   padding: 0 .5em;
   color: #fff;
