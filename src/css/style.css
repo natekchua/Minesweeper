@@ -21,7 +21,7 @@ body {
 }
 
 select {
-  background: #f335ca;
+  background: #fc43d4;
   border: 10px solid;
   border-image-slice: 1;
   border-width: 5px;
@@ -30,11 +30,6 @@ select {
   color: #fff;
   cursor: pointer;
 }
-
-option:hover {
-  color: #444645;
-  background: #ddd !important;
-  }
 
 option {
   background: rgb(217, 36, 253);
