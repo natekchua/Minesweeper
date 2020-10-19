@@ -5,10 +5,14 @@ const STATE_SHOWN = "shown";
 const STATE_FLAGGED = "flagged";
 const GAME_MESSAGES = ["You snooze, you lose!", "Congratulations, you won!"];
 const CELL_COLORS = {
+  "0": "grey",
   "1": "blue",
   "2": "green",
   "3": "red",
-  "4": "purple"
+  "4": "purple",
+  "5": "fuchsia",
+  "6": "brown",
+  "7": "darkorange"
 };
 
 function Minesweeper(props) {
@@ -242,7 +246,7 @@ function Minesweeper(props) {
       <>
         {gridView.map((cell, index) => (
           <div
-            className="cell"
+            className="cell flex"
             key={index}
             onClick={() => uncover(cell.coords[0], cell.coords[1])}
             onContextMenu={(e) => {
@@ -250,7 +254,13 @@ function Minesweeper(props) {
               flag(cell.coords[0], cell.coords[1]);
             }}
           >
-            <div style={{ color: CELL_COLORS[cell.status] }}>{cell.status}</div>
+            {
+              cell.status === 'M'
+                ? <div className='bomb'></div>
+                : cell.status === 'F'
+                  ? <div className='flag'></div>
+                  : <div style={{ color: CELL_COLORS[cell.status] }}>{cell.status}</div>
+            }
           </div>
         ))}
       </>
@@ -260,13 +270,13 @@ function Minesweeper(props) {
   return (
     <>
       <div id="grid">{generateGrid()}</div>
-      <div id="overlay">
-        <div id="overlayin">
+      <div id="overlay" className="flex">
+        <div id="overlayin" className="flex">
           <p className="big glow">
             {exploded ? GAME_MESSAGES[0] : GAME_MESSAGES[1]}
           </p>
           <p className="darker">
-            It took you <span className="moveCount">{nMoves}</span> moves.
+            It took you <span className="moveCount">{nMoves}</span> moves in {props.elapsedTime} seconds.
           </p>
           <p className="darker">Click anywhere to start a new game. </p>
         </div>

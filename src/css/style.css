@@ -1,15 +1,13 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
-}
-
 * {
-  font-family: Impact;
+  font-family: "OCR A Std", monospace;
   font-size: 1.3rem;
+  padding: 0;
+  margin: 0;
 }
 
 h1 {
   font-size: 2rem;
+  color: white;
 }
 
 body {
@@ -20,24 +18,66 @@ body {
   height: 100vh;
   width: 100vw;
   margin: 0px;
-  background: rgb(255, 3, 158);
+}
+
+select {
+  background: #f335ca;
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+  padding: 0 .5em;
+  color: #fff;
+  cursor: pointer;
+}
+
+option:hover {
+  color: #444645;
+  background: #ddd !important;
+  }
+
+option {
+  background: rgb(217, 36, 253);
+}
+
+#root {
+  background: url("../img/bg.jpg") no-repeat fixed center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid black;
   margin: 0 auto;
   max-width: 800px;
   height: 100vh;
 }
 
+.bomb {
+  background: url("../img/bomb.png");
+  background-size: contain;
+  height: 100%;
+  width: 100%;
+}
+
+.flag {
+  background: url("../img/flag.png") no-repeat;
+  background-size: contain;
+  height: 80%;
+  width: 80%;
+}
+
 .cell {
   background: rgb(224, 224, 224);
   text-align: center;
-  border: 4px outset white;
+  border: 5px outset white;
   padding: 2px;
   text-decoration: none;
 }
@@ -55,7 +95,11 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 90%;
-  padding: 15px;
+  padding: 20px 40px;
+  margin: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.315);
+  border-radius: 30px;
+  color: white;
 }
 
 #grid {
@@ -76,9 +120,6 @@ body {
   background: rgba(0, 0, 0, 0.7);
   z-index: 999;
   opacity: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   animation: 0s;
   transition: all 0s;
 
@@ -102,9 +143,6 @@ body {
   padding-right: 4em;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   color: rgb(255, 255, 255);
   box-shadow: 0 0 20px black;

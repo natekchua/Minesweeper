@@ -4,6 +4,7 @@ import Minesweeper from "./Minesweeper";
 const STATE_HIDDEN = "hidden";
 let t = 0;
 let timer = null;
+let elapsedTime = t;
 
 export default class MinesweeperContainer extends React.Component {
   constructor(props) {
@@ -43,6 +44,7 @@ export default class MinesweeperContainer extends React.Component {
   stopTimer() {
     if (timer) window.clearInterval(timer);
     document.getElementById("timer").innerHTML = "000".substr(-3);
+    elapsedTime = t;
     t = 0;
   }
 
@@ -83,13 +85,13 @@ export default class MinesweeperContainer extends React.Component {
   render() {
     const { nMines, nFlagged, arr } = this.state;
     return (
-      <div className="container">
-        <h1>Minesweeper</h1>
+      <div className="container flex">
+        <h1>Nate's Minesweeper</h1>
         <div id="game-header">
-          <p>Flags left: {nMines - nFlagged}</p>
+          <p>Flags: {nMines - nFlagged}</p>
           <div id="timer">000</div>
           <select
-            className="difficulty"
+            className="flex"
             onChange={(e) => this.changeDifficulty(e.target.value)}
             value={this.state.difficulty}
           >
@@ -98,10 +100,11 @@ export default class MinesweeperContainer extends React.Component {
           </select>
         </div>
         <Minesweeper
-          difficulty={this.state.difficulty}
           startTimer={this.startTimer}
           stopTimer={this.stopTimer}
           updateFlagCount={this.updateFlagCount}
+          difficulty={this.state.difficulty}
+          elapsedTime={elapsedTime}
           rows={this.nRows}
           cols={this.nCols}
           mines={nMines}
