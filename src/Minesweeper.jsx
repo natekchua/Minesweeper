@@ -1,18 +1,18 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from 'react';
 
-const STATE_HIDDEN = "hidden";
-const STATE_SHOWN = "shown";
-const STATE_FLAGGED = "flagged";
-const GAME_MESSAGES = ["You snooze, you lose!", "Congratulations, you won!"];
+const STATE_HIDDEN = 'hidden';
+const STATE_SHOWN = 'shown';
+const STATE_FLAGGED = 'flagged';
+const GAME_MESSAGES = ['You snooze, you lose!', 'Congratulations, you won!'];
 const CELL_COLORS = {
-  "0": "grey",
-  "1": "blue",
-  "2": "green",
-  "3": "red",
-  "4": "purple",
-  "5": "fuchsia",
-  "6": "brown",
-  "7": "darkorange"
+  '0': 'grey',
+  '1': 'blue',
+  '2': 'green',
+  '3': 'red',
+  '4': 'purple',
+  '5': 'fuchsia',
+  '6': 'brown',
+  '7': 'darkorange'
 };
 
 function Minesweeper(props) {
@@ -56,11 +56,11 @@ function Minesweeper(props) {
 
       if (exploded || nUncovered === nRows * nCols - nMines) {
         props.stopTimer();
-        document.querySelector("#overlay").classList.toggle("active");
+        document.querySelector('#overlay').classList.toggle('active');
         // callback for overlay click - hide overlay and regenerate game
-        document.querySelector("#overlay").addEventListener("click", () => {
+        document.querySelector('#overlay').addEventListener('click', () => {
           reset();
-          document.querySelector("#overlay").classList.remove("active");
+          document.querySelector('#overlay').classList.remove('active');
         });
       }
     }
@@ -70,28 +70,28 @@ function Minesweeper(props) {
 
   // Apply grid dimensons and cell size upon difficulty change
   const setGridDimensions = () => {
-    let grid = document.getElementById("grid");
+    let grid = document.getElementById('grid');
     let buttonSize = grid.clientWidth / nCols;
     grid.style.gridTemplateColumns = `repeat(${nCols}, ${buttonSize}px)`;
     grid.style.gridTemplateRows = `repeat(${nRows}, ${buttonSize}px)`;
   };
 
   // returns array of strings representing the rendering of the board
-  //      "H" = hidden cell - no bomb
-  //      "F" = hidden cell with a flag
-  //      "M" = mine (game should be over now)
+  //      'H' = hidden cell - no bomb
+  //      'F' = hidden cell with a flag
+  //      'M' = mine (game should be over now)
   // '0'..'9' = number of mines in adjacent cells
   const getRendering = () => {
     let s = [];
     for (let row = 0; row < nRows; row++) {
       for (let col = 0; col < nCols; col++) {
         let a = arr[row][col];
-        if (exploded && a.mine) s.push({ status: "M", coords: [row, col] });
+        if (exploded && a.mine) s.push({ status: 'M', coords: [row, col] });
         else if (a.state === STATE_HIDDEN)
-          s.push({ status: "", coords: [row, col] });
+          s.push({ status: '', coords: [row, col] });
         else if (a.state === STATE_FLAGGED)
-          s.push({ status: "F", coords: [row, col] });
-        else if (a.mine) s.push({ status: "M", coords: [row, col] });
+          s.push({ status: 'F', coords: [row, col] });
+        else if (a.mine) s.push({ status: 'M', coords: [row, col] });
         else s.push({ status: a.count.toString(), coords: [row, col] });
       }
     }
@@ -145,11 +145,11 @@ function Minesweeper(props) {
     }
     let mines = [];
     for (let row = 0; row < nRows; row++) {
-      let s = "";
+      let s = '';
       for (let col = 0; col < nCols; col++) {
-        s += arrCopy[row][col].mine ? "B" : ".";
+        s += arrCopy[row][col].mine ? 'B' : '.';
       }
-      s += "  |  ";
+      s += '  |  ';
       for (let col = 0; col < nCols; col++) {
         s += arrCopy[row][col].count.toString();
       }
@@ -246,7 +246,7 @@ function Minesweeper(props) {
       <>
         {gridView.map((cell, index) => (
           <div
-            className="cell flex"
+            className='cell flex'
             key={index}
             onClick={() => uncover(cell.coords[0], cell.coords[1])}
             onContextMenu={(e) => {
@@ -269,16 +269,16 @@ function Minesweeper(props) {
 
   return (
     <>
-      <div id="grid">{generateGrid()}</div>
-      <div id="overlay" className="flex">
-        <div id="overlayin" className="flex">
-          <p className="big glow">
+      <div id='grid'>{generateGrid()}</div>
+      <div id='overlay' className='flex'>
+        <div id='overlayin' className='flex'>
+          <p className='big glow'>
             {exploded ? GAME_MESSAGES[0] : GAME_MESSAGES[1]}
           </p>
-          <p className="darker">
-            It took you <span className="moveCount">{nMoves}</span> moves in {props.elapsedTime} seconds.
+          <p className='darker'>
+            It took you <span className='moveCount'>{nMoves}</span> moves in {props.elapsedTime} seconds.
           </p>
-          <p className="darker">Click anywhere to start a new game. </p>
+          <p className='darker'>Click anywhere to start a new game. </p>
         </div>
       </div>
     </>

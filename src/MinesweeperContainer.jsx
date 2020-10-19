@@ -1,7 +1,7 @@
-import React from "react";
-import Minesweeper from "./Minesweeper";
+import React from 'react';
+import Minesweeper from './Minesweeper';
 
-const STATE_HIDDEN = "hidden";
+const STATE_HIDDEN = 'hidden';
 let t = 0;
 let timer = null;
 let elapsedTime = t;
@@ -12,7 +12,7 @@ export default class MinesweeperContainer extends React.Component {
     this.nRows = 8;
     this.nCols = 10;
     this.state = {
-      difficulty: "easy",
+      difficulty: 'easy',
       nMines: 10,
       nFlagged: 0,
       arr: this.array2d(this.nRows, this.nCols, () => ({
@@ -37,23 +37,23 @@ export default class MinesweeperContainer extends React.Component {
   startTimer() {
     timer = setInterval(function () {
       t++;
-      document.getElementById("timer").innerHTML = ("000" + t).substr(-3);
+      document.getElementById('timer').innerHTML = ('000' + t).substr(-3);
     }, 1000);
   }
 
   stopTimer() {
     if (timer) window.clearInterval(timer);
-    document.getElementById("timer").innerHTML = "000".substr(-3);
+    document.getElementById('timer').innerHTML = '000'.substr(-3);
     elapsedTime = t;
     t = 0;
   }
 
   changeDifficulty(mode) {
-    if (mode === "easy") {
+    if (mode === 'easy') {
       this.nRows = 8;
       this.nCols = 10;
       this.setState({
-        difficulty: "easy",
+        difficulty: 'easy',
         nMines: 10,
         arr: this.array2d(this.nRows, this.nCols, () => ({
           mine: false,
@@ -65,7 +65,7 @@ export default class MinesweeperContainer extends React.Component {
       this.nRows = 14;
       this.nCols = 18;
       this.setState({
-        difficulty: "medium",
+        difficulty: 'medium',
         nMines: 40,
         arr: this.array2d(this.nRows, this.nCols, () => ({
           mine: false,
@@ -85,18 +85,18 @@ export default class MinesweeperContainer extends React.Component {
   render() {
     const { nMines, nFlagged, arr } = this.state;
     return (
-      <div className="container flex">
+      <div className='container flex'>
         <h1>Nate's Minesweeper</h1>
-        <div id="game-header">
+        <div id='game-header'>
           <p>Flags: {nMines - nFlagged}</p>
-          <div id="timer">000</div>
+          <div id='timer'>000</div>
           <select
-            className="flex"
+            className='flex'
             onChange={(e) => this.changeDifficulty(e.target.value)}
             value={this.state.difficulty}
           >
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
+            <option value='easy'>Easy</option>
+            <option value='medium'>Medium</option>
           </select>
         </div>
         <Minesweeper

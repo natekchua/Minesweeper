@@ -1,5 +1,5 @@
 * {
-  font-family: "OCR A Std", monospace;
+  font-family: 'OCR A Std', monospace;
   font-size: 1.3rem;
   padding: 0;
   margin: 0;
@@ -35,7 +35,7 @@ option {
 }
 
 #root {
-  background: url("../img/bg.jpg") no-repeat fixed center;
+  background: url('../img/bg.jpg') no-repeat fixed center;
   background-size: cover;
   height: 100vh;
   width: 100%;
@@ -55,14 +55,14 @@ option {
 }
 
 .bomb {
-  background: url("../img/bomb.png");
+  background: url('../img/bomb.png');
   background-size: contain;
   height: 100%;
   width: 100%;
 }
 
 .flag {
-  background: url("../img/flag.png") no-repeat;
+  background: url('../img/flag.png') no-repeat;
   background-size: contain;
   height: 80%;
   width: 80%;
