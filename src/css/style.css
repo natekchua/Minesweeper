@@ -18,7 +18,6 @@ body {
   height: 100vh;
   width: 100%;
   margin: 0px;
-  overflow: hidden;
 }
 
 select {
@@ -307,10 +306,6 @@ p.glow {
     font-size: 1rem;
   }
 
-  body {
-    overflow-y: scroll;
-  }
-
   h1 {
     font-size: 1.2rem;
   }
@@ -338,10 +333,6 @@ p.glow {
     font-size: 1rem;
   }
 
-  body {
-    overflow-y: scroll;
-  }
-
   h1 {
     font-size: 1.2rem;
   }
@@ -364,10 +355,6 @@ p.glow {
 @media only screen and (width: 653px) and (height: 280px) and (orientation: landscape) {
   * {
     font-size: 1rem;
-  }
-
-  body {
-    overflow-y: scroll;
   }
 
   h1 {
