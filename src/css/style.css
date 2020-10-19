@@ -98,7 +98,7 @@ option {
 }
 
 #grid {
-  width: 800px;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
   display: grid;
@@ -132,9 +132,7 @@ option {
 }
 
 #overlayin {
-  padding: 1em;
-  padding-left: 4em;
-  padding-right: 4em;
+  padding: 1em 4em;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   flex-direction: column;
@@ -204,5 +202,93 @@ p.glow {
   to {
     transform: scale(1) rotateX(360deg);
     opacity: 1;
+  }
+}
+
+/* Responsive Media Queries */
+
+/* Medium Devices (Desktops, Laptops) */
+@media only screen and (max-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+/* Small Devices (Phones, Tablets) */
+@media only screen and (max-width: 768px) {
+  * {
+    font-size: 1.15rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .container {
+    max-width: 768px;
+  }
+
+  #game-header {
+    padding: 10px 18px;
+    margin: 15px;
+  }
+
+  #grid {
+    width: 768px;
+    margin: 0 auto;
+    display: grid;
+  }
+
+  #overlayin {
+    padding: 1.1em 2.2em;
+    box-shadow: 0 0 15px black;
+  }
+  
+  #overlayin p {
+    font-size: 1em;
+  }
+  
+  p.big {
+    font-size: 1.5em !important;
+  }
+}
+
+/* Extra Small Devices (Phones) */
+@media only screen and (max-width: 480px) {
+  * {
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    color: rgb(109, 187, 231);
+  }
+
+  .container {
+    max-width: 480px;
+  }
+
+  #game-header {
+    padding: 6px 12px;
+    margin: 10px;
+  }
+
+  #grid {
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+  }
+
+  #overlayin {
+    padding: 1em 2em;
+    box-shadow: 0 0 10px black;
+  }
+  
+  #overlayin p {
+    font-size: 0.85em;
+  }
+  
+  p.big {
+    font-size: 1.25em !important;
   }
 }
