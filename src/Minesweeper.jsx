@@ -239,7 +239,7 @@ function Minesweeper(props) {
     setNMoves(0);
     setExploded(false);
   };
-
+  
   // generate rendered grid in UI
   const generateGrid = () => {
     return (
