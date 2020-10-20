@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a Replicated Minesweeper Game built using React. This app was made for SENG 513 Web-Based Systems Assignment 2.
 
 ## Available Scripts
 
