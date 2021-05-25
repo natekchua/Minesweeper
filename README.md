@@ -1,4 +1,4 @@
-This is a Replicated Minesweeper Game built using React. This app was made for SENG 513 Web-Based Systems Assignment 2.
+This is a Replicated Minesweeper Game built using React.
 The deployed app can be found here: https://nates-minesweeper.netlify.app/
 ## Available Scripts
 
